@@ -3,13 +3,9 @@ from datetime import datetime, timedelta
 import json
 import sys
 
-
-
 # Connect to Redis server
 r = redis.Redis(host='localhost', port=6379, decode_responses=True)
 
-
-# user = r.get(userEmail)
 
 def enableConnexion(userEmail):
 
@@ -27,10 +23,6 @@ def enableConnexion(userEmail):
         }
 
         r.set(userEmail, json.dumps(userInfo))
-
-
-        print("Create new user")
-
 
     else:
         # Get user info

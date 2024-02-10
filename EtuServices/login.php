@@ -29,7 +29,7 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
         $command = escapeshellcmd($cmd);
         $shelloutput = shell_exec($command);
 
-
+        // Redirection vers la page d'accueil si le script python return true (1)
         if(intval($shelloutput) == 1) {
             header('Location: accueil.php'); // Redirection vers la page accueil
         }
